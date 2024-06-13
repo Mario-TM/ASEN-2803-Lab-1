@@ -1,3 +1,63 @@
 clc
-close all
-clear
+close all 
+clr 
+
+
+% Constants 
+g = 9.81; % Acceleration due to gravity (m/s^2)
+h0 = 1250; % Initial Height (in meters)
+r_loop = 100; % Radius of loop (in meters) 
+theta_bank = 30; % Degrees
+
+% G-forces in their corresponding axis 
+G_x = 0; 
+G_y = 0; 
+G_z = 0; 
+
+% Forces 
+N = 0; % Normal Force 
+
+%% Parabola
+
+
+
+%% Horizontal 
+
+N = 
+
+
+
+%% Loop
+
+% velocity 
+for i=1:100 % Place holder function
+h = 
+v(i) = sqrt(2 .* g .* (h0 - h(i))); % Velocity of vehicle at any given h. 
+N = mass(g + v(i).^2 ./ r_loop); % first half of loop
+
+end
+
+%% Bank 
+
+radius_bank = 0; 
+v_bank = sqrt(2 .* g .* (h0 - h(i))); % Velocity of vehicle during bank. 
+
+CT = m .* v_bank.^2 ./ radius_bank; % Centripetal Force 
+CT_y = CT .* sin(180-theta_bank); % Centri. Force (y-direction) 
+CT_x = CT .* cos(180 - theta_bank); % Centri. Force (x-direction)
+G_Y = g .* sin(90 - theta_bank) + CT_Y; % Total G's (y-direction)
+G_X = g .* cos(90 - theta_bank) + CT_X; % Total G's (x-direction) 
+
+
+
+
+%% Straight-sway (without deceleration) 
+
+v = sqrt(2 .* g .* (h0 - h(i))); % Velocity of vehicle at any given h. 
+N = m .* g ; 
+G_y = 1; 
+G_x = 0; 
+G_z = 0; 
+
+
+%% Straight-away (deceleration)
