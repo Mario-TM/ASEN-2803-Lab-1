@@ -35,7 +35,7 @@ g_vertical_up = @(x) normal_force(x) ./ (mass .* g);
 g_vertical_down = @(x) -normal_force(x) ./ (mass .* g);
 
 % Define the range of x values to evaluate
-x_values = linspace(0, 400, 1000); % Range of x values from -100 to 100
+x_values = linspace(0, 400, 1000); % Range of x values from 0 to 400
 height_values = y(x_values);
 velocity_values = velocity(x_values);
 g_forward_values = g_forward(x_values);
@@ -50,7 +50,6 @@ final_height = height_values(end);
 fprintf('Final velocity: %.2f m/s\n', final_velocity);
 fprintf('Final height: %.2f m\n', final_height);
 
-% Plot the results
 figure;
 plot(x_values, height_values);
 title('Height of the Roller Coaster');
@@ -65,7 +64,7 @@ ylabel('Velocity (m/s)');
 
 figure;
 plot(x_values, g_forward_values);
-title('Forward/Backward G-Forces');
+title('Forward G-Forces');
 xlabel('x (m)');
 ylabel('G-Forces (g)');
 
